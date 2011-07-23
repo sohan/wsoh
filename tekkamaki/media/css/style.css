@@ -1,0 +1,53 @@
+content {
+  margin: auto;
+  width:960px;
+  height:100%;
+}
+
+ul#nav {
+  list-style:none;
+  width:500px;
+}
+
+.header {
+  display:inline;
+  font-size:2em;
+  margin:25px;
+}
+
+ul .users {
+  display:none;
+}
+
+#tm_title {
+  font-weight:bold;
+}
+
+.left {
+  float:left;
+  width:400px;
+}
+
+.right {
+  float:right;
+  width:560px;
+  text-align:left;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+  
+h2 {
+  font-size: 1em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+#num_yay, #num_nay {
+  text-align:center;
+}
+
+}

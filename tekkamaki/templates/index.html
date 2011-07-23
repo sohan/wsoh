@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block head %}
+<script type="text/javascript" src="/{{MEDIA_URL}}js/reddit.js"></script>
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+  var reddit_posts = {{ reddit_posts|safe }};
+  var session_name = "{{ session_name }}";
+  var room = "{{ room }}";
+  now.ready(load);
+</script>
+
+<div id="left" class="left">
+  <ul id= "nav">
+  <li class="header big" id="tm_title">CoReddit</li>
+  <li class="header med" id="room_name">
+    {% block room_name %} Empty room {% endblock %}
+  </li>
+  <li class="header" id="users">
+    {% block users %} Users {% endblock %}
+  </li>
+  </ul>
+
+  <p id="count"></p>
+  <h1 id="title"></h1>
+  <h2 id="url"></h2>
+  <h3 id="upvotes"></h3>
+  <h3 id="downvotes"></h3>
+  <div id="readit"></div>
+  <p id="readvotes"></p>
+  <div id="fit"></div>
+  <p id="fvotes"></p>
+  <table>  
+  <tr>
+    <td id="yay"><button type="button">Yay!</button></td>
+    <td id="nay"><button type="button">Nay!</button></td>
+  </tr>
+  <tr>
+    <td id="num_yay"></td>
+    <td id="num_nay"></td>
+  </tr>
+  </table>
+</div>
+
+<div class="right">
+<iframe id="iframe_content" width="100%" height="100%" src=""></iframe>
+</div>
+
+{% endblock %}

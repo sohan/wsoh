@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+  <script type="text/javascript" src="/{{MEDIA_URL}}js/script.js"></script>
+{% endblock %}
+{% block content %}
+<div id="session">
+  {% if session_name %}
+    Session name: {{ session_name }}
+  {% else %}
+    <a href="/join/">Join a session first</a>
+  {% endif %}
+</div>
+<div id="coords"></div>
+<div id="result"></div>
+<button type="submit" id="submit">send click to server</button>
+{% csrf_token %}
+{% endblock %}

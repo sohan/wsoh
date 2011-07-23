@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(document).click(function(e) {
+      $("#coords").html(e.pageX + ', ' + e.pageY);
+    });
+  
+    var x_vals = [{% for c in click_list %}"{{ c.x }}"{% if not forloop.last %},{% endif %}{% endfor %}];
+    var y_vals = [{% for c in click_list %}"{{ c.y }}"{% if not forloop.last %},{% endif %}{% endfor %}];
+  
+    var e;
+    var i;
+    var len;
+    e = new jQuery.Event("click");
+    for ( i=0, len=x_vals.length; i<len; ++i ){
+        e.pageX = x_vals[i];
+        e.pageY = y_vals[i];
+        $(document).trigger(e);
+    }
+  });
+  </script>
+{% endblock %}
+{% block content %}
+<ul>
+    {% for c in click_list %}
+        <li>{{ c }}</li>
+    {% endfor %}
+</ul>
+<div id="coords"></div>
+{% endblock %}
